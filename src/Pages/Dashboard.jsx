@@ -208,7 +208,7 @@ function Dashboard() {
             class=" bg-white border max-w-[200px] w-full h-[200px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
             <a href="">
-              <img class="rounded-t-lg h-[150px] max-w-[200px] w-full " src={image.image} alt="" />
+              <img loading="lazy" class="rounded-t-lg h-[150px] max-w-[200px] w-full " src={image.image} alt="" />
             </a> 
             <div class="p-5">
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
