@@ -11,6 +11,7 @@
     border: 5px solid #FFF;
     border-bottom-color: #FF3D00;
     border-radius: 50%;
+    margin: 20px auto;
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;

@@ -193,6 +193,7 @@ function Dashboard() {
 
  {
   loading ?
+  
   <span class="loader"></span>
  :
 
