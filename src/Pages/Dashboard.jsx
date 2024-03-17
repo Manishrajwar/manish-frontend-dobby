@@ -12,6 +12,8 @@ function Dashboard() {
 
   const fileInputRef = useRef(null);
 
+  const [loading , setLoading] = useState(false);
+
   const [serchInput , setSearchInput] = useState("");
 
   const [allImages, setAllImages] = useState([]);
@@ -75,6 +77,7 @@ function Dashboard() {
   };
 
   const getAllImage = async () => {
+    setLoading(true);
     try {
       const response = await fetch(endpoints.GET_IMAGE, {
         method: "GET",
@@ -91,6 +94,8 @@ function Dashboard() {
     } catch (error) {
       console.log(error);
     }
+
+    setLoading(false);
   };
 
 
@@ -187,9 +192,11 @@ function Dashboard() {
 
 
  {
+  loading ?
+  <span class="loader"></span>
+ :
+
   filterImage.length > 0 ?
-
-
 
       <div className="allBoxes">
         {/* single box  */}
@@ -210,7 +217,6 @@ function Dashboard() {
           </div>
         ))}
       </div>
-
       :
       <div className="noImage">
 
