@@ -1,0 +1,2 @@
+# Redirect from /old-page to /new-page
+/old-page /new-page 301
