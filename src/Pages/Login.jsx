@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { endpoints } from "../services/api";
 import "./page.css"
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setToken } from "../reducer/slices/authSlice";
 
 function Login() {
@@ -30,6 +30,7 @@ function Login() {
 
 
    const submitHandler = async(e)=>{
+    const toastId = toast.loading("Loading...");
     e.preventDefault();
     try{
       const response = await fetch(endpoints.LOGIN_API , {
@@ -41,7 +42,6 @@ function Login() {
   
       });
       const formattedResponse = await response.json();
-      console.log("f",formattedResponse);
 
       if(response.status === 200){
          dispatch(setToken(formattedResponse.token));
@@ -60,6 +60,7 @@ function Login() {
     } catch(error){
        console.log("error ",error);
     }
+    toast.dismiss(toastId);
    }
 
 

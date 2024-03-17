@@ -26,8 +26,10 @@ function Signup() {
    }
 
    const submitHandler = async(e)=>{
-    e.preventDefault();
 
+     const toastId = toast.loading("Loading...");
+
+    e.preventDefault();
 
     try{
       const response = await fetch(endpoints.SIGNUP_API , {
@@ -52,6 +54,8 @@ function Signup() {
        console.log("error ",error);
        toast.error("Something went wrong , please try again");
     }
+
+    toast.dismiss(toastId);
    }
 
   return (

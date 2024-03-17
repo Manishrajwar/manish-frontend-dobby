@@ -11,7 +11,6 @@ import OpenRoute from './Component/OpenRoute';
 function App() {
 
    const {token} = useSelector((state)=>state.auth);
-   console.log("tpken",token);
 
   return (
      <div className="App">

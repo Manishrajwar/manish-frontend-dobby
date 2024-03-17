@@ -93,9 +93,6 @@ function Dashboard() {
     }
   };
 
-  useEffect(() => {
-    getAllImage();
-  }, []);
 
   useEffect(()=>{
 
@@ -115,6 +112,12 @@ function Dashboard() {
       }
  
   },[serchInput])
+
+  useEffect(() => {
+    getAllImage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <div className="w-full dark:bg-gray-900 border-t-[1px] border-gray-200 dash">
@@ -196,9 +199,9 @@ function Dashboard() {
             key={image?._id}
             class=" bg-white border max-w-[200px] w-full h-[200px] border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <a href="#">
+            <a href="">
               <img class="rounded-t-lg h-[150px] max-w-[200px] w-full " src={image.image} alt="" />
-            </a>
+            </a> 
             <div class="p-5">
               <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {image?.Name}
